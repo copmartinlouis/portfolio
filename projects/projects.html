@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        button:hover{
+            background: #333;
+        }
+
+        .box:hover{
+            background-color: #333;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-serif overflow-y-scroll opacity-0 transition-opacity duration-1000 min-h-screen relative flex flex-col items-center">
+
+    <!-- Barre blanche -->
+    <div class="absolute top-0 left-0 w-full h-full flex justify-between">
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+    </div>
+
+    <!-- Header -->
+    <header class="p-5 absolute w-full top-0 flex justify-center items-center z-10">
+
+        <button class="absolute top-5 left-5 bg-black text-white p-3 text-xl rounded tracking-widest border border-white z-20" onclick="history.back()">
+            ← Back
+        </button>
+
+        <button class="bg-black text-white p-3 text-xl rounded tracking-widest border border-white" onclick="window.location.href='/main/main.html'">
+            Louis Copmartin
+        </button>
+    </header>
+
+    <!-- Main Title -->
+    <h1 class="text-4xl font-bold mt-32 mb-12 z-10 mx-auto">My Projects</h1>
+
+    <!-- Projects Container -->
+    <div class="w-4/5 max-w-5xl mt-10 z-10">
+
+        <!-- Project 1 -->
+        <button class="box flex flex-col md:flex-row items-center mb-10 border border-white p-6 bg-black " onclick="window.location.href='/projects/RoboSoccer/robo.html'">
+            <img src="/img/temp.png" class="w-full md:w-1/3 h-auto mb-4 md:mb-0 md:mr-6 border-2 border-white rounded-[80px]">
+            <div class="flex-1">
+                <h2 class="text-2xl font-bold mb-16">RoboSoccer Tournament Manager Website</h2>
+                <p class="text-lg leading-relaxed">
+                    A tournament management platform for organizing RoboSoccer competitions, featuring team registration, 
+            match scheduling, and real-time score tracking.
+                </p>
+            </div>
+        </button>
+
+        <!-- Project 2 -->
+        <button class="box flex flex-col md:flex-row items-center mb-10 border border-white p-6 bg-black " onclick="window.location.href='/projects/DVS/dvs.html'">
+            <img src="/img/carbon_logo.png" alt="Graph Software" class="w-full md:w-1/3 h-auto mb-4 md:mb-0 md:mr-6 border-2 border-white rounded-[80px]">
+            <div class="flex-1">
+                <h2 class="text-2xl font-bold mb-16">Data Visualization Software</h2>
+                <p class="text-lg leading-relaxed">
+                    Carbon is a data visualization tool offering interactive world maps, 
+                    versatile plots, and linear regression analysis. It supports geographic focus, multi-data comparisons, 
+                    and dynamic filtering, enabling users to explore global trends and insights efficiently.
+                </p>
+            </div>
+        </button>
+
+        <!-- Project 3 -->
+        <button class="box flex flex-col md:flex-row items-center md:items-start mb-10 border border-white p-6 bg-black rounded-md" onclick="window.location.href='/projects/AiTowa/AiTowa.html'">
+            <!-- Section Texte -->
+            <div class="flex-1">
+                <h2 class="text-2xl font-bold mb-4">AI - Towa</h2>
+                <p class="text-lg leading-relaxed">
+                    In a group of two we developed a board game named Towa. And in this project, 
+                    we created an AI to play on this board game and win against other student's AIs.
+                </p>
+            </div>
+            
+            <!-- Image -->
+            <img src="/img/temp.png" alt="Andyralgo" class="w-full md:w-1/3 h-auto mt-6 md:mt-0 md:ml-10 border-2 border-white rounded-[80px]">
+        </button>
+
+        <!-- Project 4 -->
+        <button class="box flex flex-col md:flex-row items-center mb-10 border border-white p-6 bg-black" onclick="window.location.href='/projects/RSA/rsa.html'">
+            <img src="/img/temp.png" alt="Graph Software" class="w-full md:w-1/3 h-auto mb-4 md:mb-0 md:mr-6 border-2 border-white rounded-[80px]">
+            <div class="flex-1">
+                <h2 class="text-2xl font-bold mb-16">RSA ENCRYPTION SOFTWARE</h2>
+                <p class="text-lg leading-relaxed">
+                    Development of a secure messaging application in Java, featuring RSA encryption, 
+                    digital signatures, certificate management, and real-time encrypted communication between 
+                    multiple users.
+                </p>
+            </div>
+        </button>
+
+        <!-- Project 5 -->
+        <button class="box flex flex-col md:flex-row items-center md:items-center mb-10 border border-white p-6 bg-black" onclick="window.location.href='/projects/BananaW/BananaW.html'">
+            <!-- Section Texte -->
+            <div class="flex-1">
+                <h2 class="text-2xl font-bold mb-4">BananaW</h2>
+                <p class="text-lg leading-relaxed">
+                    In html/CSS I developed a small fictional and humoristic website. This was one of my 
+                    first projects and I like to show it to show from where I started compared to where I am
+                    now.
+                </p>
+            </div>
+            
+            <!-- Image -->
+            <img src="/img/bananaw_logo.PNG" alt="Andyralgo" class="w-full md:w-1/3 h-auto md:ml-10 border-2 border-white rounded-[80px]">
+        </button>
+        
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Fade in the body (background + bars)
+            const body = document.querySelector("body");
+            body.classList.remove("opacity-0");
+            body.classList.add("opacity-100");
+        });
+    </script>
+
+</body>
+</html>

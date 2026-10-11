@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copmartin Louis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="main.js"></script>
+    <style>
+        button:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body class="bg bg-black text-white overflow-y-scroll opacity-0 transition-opacity duration-1000 min-h-screen relative flex items-center justify-center">
+
+    <!-- Barre blanche -->
+    <div class="absolute top-0 left-0 w-full h-full flex justify-between">
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+        <span class="bar w-[2px] h-full bg-white"></span>
+    </div>
+
+    <!-- Header centré -->
+    <header class="bg-transparent p-5 absolute w-full top-0 left-0 flex justify-center items-center z-10">
+        <button class="bg-black text-white font-serif p-3 text-xl rounded tracking-[3px] border-0" onclick="window.location.href='/main/main.html'">
+            Louis Copmartin
+        </button>
+    </header>
+
+    <!-- Contenu principal -->
+    <div class="h-screen flex flex-col justify-center items-center opacity-0 scale-90 transform transition-all duration-1000" id="profileBox">
+        <h1 class="name text-9xl font-serif font-bold tracking-[11px]">
+            Copmartin
+        </h1>
+        <h3 class="mid bg-black text-gray-300 z-10">Software Developer</h3>
+        <h1 class="name text-9xl font-serif font-bold tracking-[11px]">
+            Louis
+        </h1>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Fade in the body (background + bars)
+            const body = document.querySelector("body");
+            body.classList.remove("opacity-0");
+            body.classList.add("opacity-100");
+
+            // Fade in and zoom the profile box
+            const profileBox = document.getElementById("profileBox");
+            setTimeout(() => {
+                profileBox.classList.remove("opacity-0", "scale-90");
+                profileBox.classList.add("opacity-100", "scale-100");
+            }, 0);
+        });
+    </script>
+</body>
+</html>

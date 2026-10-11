@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ProfilePage</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+   <style>
+       /* Masquer tout au début */
+       .outlineBox {
+           opacity: 0;
+           transition: opacity 1s ease;
+       }
+
+       /* Affichage visible de l'outlineBox */
+       .outlineBox.visible {
+           opacity: 1;
+       }
+
+       /* Boîte principale cachée par défaut */
+       #profileBox {
+           opacity: 0;
+           transform: scale(0.9);
+           transition: opacity 1s ease, transform 2s ease;
+       }
+
+       /* Apparition de la boîte principale */
+       #profileBox.visible {
+           opacity: 1;
+           transform: scale(1);
+       }
+
+       /* Ombre claire pour le texte "About me" */
+       .text-shadow-light {
+           text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
+       }
+
+       /* Transition progressive du bouton Skills */
+       .btn-skills {
+           background-color: black;
+           transition: background-color 0.5s ease, transform 0.3s ease;
+       }
+
+       .btn-skills:hover {
+           background-color: #4b5563; /* Gris (équivalent à Tailwind bg-gray-600) */
+           transform: scale(1.05); /* Légère mise en avant au survol */
+       }
+        button:hover{
+            background: #333;
+        }
+    </style>
+</head>
+<body class="outlineBox flex items-center justify-center min-h-screen" style="background-color: rgb(82, 82, 82);">
+    <header class="bg-transparent p-5 absolute w-full top-0 left-0 flex justify-center items-center">
+        <button class="bg-black text-white font-serif p-3 text-xl rounded tracking-[3px] border-0 z-1" onclick="window.location.href='/main/main.html'">
+            Louis Copmartin
+        </button>
+    </header>
+   <!-- Conteneur principal -->
+   <div id="profileBox" class="w-full max-w-6xl bg-gray-700 rounded-2xl overflow-hidden p-8 shadow-2xl shadow-gray-900">
+       <div class="flex flex-col md:flex-row bg-gray-800 rounded-xl overflow-hidden p-6 relative items-center shadow-lg">
+           <!-- Section image -->
+           <div class="md:w-1/2 p-6 flex items-center justify-center">
+               <div class="bg-white p-2 rounded-xl shadow-md">
+                   <img src="/img/temp.png">
+               </div>
+           </div>
+           <!-- Section texte -->
+           <div class="md:w-1/2 p-8 flex flex-col justify-start max-h-full">
+               <h2 class="flex justify-center text-black text-5xl font-bold mb-8 overflow-hidden text-shadow-light">About me</h2>
+               <p class="bg-black border-2 text-white text-xl mt-12 mb-6 rounded-xl px-7 py-6">
+                Bienvenue chez Grounded, un studio de bien-être biophilique où la nature et le soin de soi se rejoignent. Niché dans notre café et boutique de plantes, notre studio est un sanctuaire conçu pour revitaliser votre esprit, votre corps et votre âme.
+             </p>
+               <!-- Ajouter une marge supplémentaire entre le texte et les boutons -->
+               <div class="flex justify-between space-x-4 mt-12">
+                   <button class="btn-skills text-white px-[5vh] py-[2vh] rounded-xl text-center shadow-lg flex items-center justify-center border-2" 
+                   onclick="window.location.href='/skills/skills.html';">
+                       Skills
+                   </button>
+                   <button class="btn-skills text-white px-[5vh] py-[2vh] rounded-xl text-center shadow-lg flex items-center justify-center border-2" 
+                   onclick="window.location.href='/projects/projects.html';">
+                       Works
+                   </button>
+                   <button class="btn-skills text-white px-[5vh] py-[2vh] rounded-xl text-center shadow-lg flex items-center justify-center border-2" 
+                   onclick="window.location.href='';">
+                       About
+                   </button>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <!-- Inclusion du fichier JavaScript -->
+   <script>
+       document.addEventListener("DOMContentLoaded", () => {
+           const outlineBox = document.querySelector(".outlineBox");
+           const profileBox = document.getElementById("profileBox");
+
+           // Affiche la boîte grise en fondu
+           outlineBox.classList.add("visible");
+
+           // Affiche la boîte principale après la transition
+           setTimeout(() => {
+               profileBox.classList.add("visible");
+           }, 0); // Aucun délai avant l'effet de fade-in
+       });
+   </script>
+</body>
+</html>
