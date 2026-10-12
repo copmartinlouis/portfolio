@@ -43,7 +43,7 @@ Les anciennes adresses HTML sont générées comme redirections vers les section
 
 ## Contenus
 
-`src/data.js` regroupe les sept projets, les quatorze compétences, les liens et les traductions. Les logos d’origine sont conservés dans `img`. Les illustrations des projets sont réalisées en CSS et SVG dans `src/components/ProjectArt.jsx`. Le visuel de Maze Game reprend la zone de jeu de la capture fournie, sans son texte de présentation.
+`src/data.js` regroupe les sept projets, les quatorze compétences, les liens et les traductions. Les logos d’origine sont conservés dans `img`. Les illustrations des projets sont réalisées en CSS et SVG dans `src/components/ProjectArt.jsx`. GraphViewer utilise l’image fournie dans `img/graphviewer.png`, affichée intégralement dans sa fiche et recadrée dans la miniature. Le visuel de Maze Game reprend la zone de jeu de la capture fournie, sans son texte de présentation.
 
 Les cinq projets initiaux sont complétés par GraphViewer et Maze Game, classés dans le filtre Algorithmique. Ces deux projets n’ont plus de dépôt source accessible ; leurs fiches le signalent sans lien vers un dépôt tiers. LinkedIn est accessible depuis la navigation et la rubrique contact. La présentation personnelle est rédigée à partir des réalisations décrites ; le texte de démonstration du studio Grounded et les images « TEMP IMG » ont été retirés.
 

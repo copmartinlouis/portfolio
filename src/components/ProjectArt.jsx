@@ -82,31 +82,14 @@ export default function ProjectArt({ project, text, compact = false }) {
         </div>
       )}
       {project.id === 'graphviewer' && (
-        <svg className="graph-graphic" viewBox="0 0 360 220">
-          <path
-            className="graph-links"
-            d="M70 45L185 25L295 70L280 175L170 120L65 160L70 45L170 120L185 25M295 70L170 120M65 160L280 175"
-          />
-          <path
-            className="graph-tree"
-            d="M65 160L70 45L185 25L170 120L280 175L295 70"
-          />
-          <g className="graph-nodes">
-            {[
-              [70, 45, 'A'],
-              [185, 25, 'B'],
-              [295, 70, 'C'],
-              [65, 160, 'D'],
-              [170, 120, 'E'],
-              [280, 175, 'F'],
-            ].map(([x, y, label]) => (
-              <g key={label} transform={`translate(${x} ${y})`}>
-                <circle r="12" />
-                <text>{label}</text>
-              </g>
-            ))}
-          </g>
-        </svg>
+        <img
+          className="graph-image"
+          src={project.image}
+          alt=""
+          loading="lazy"
+          width="1920"
+          height="1080"
+        />
       )}
       {project.id === 'maze' && (
         <svg

@@ -1,6 +1,7 @@
 import carbonLogo from '../img/carbon_logo.png';
 import bananaLogo from '../img/bananaw_logo.PNG';
 import mazeImage from '../img/maze-game.png';
+import graphViewerImage from '../img/graphviewer.png';
 import javaLogo from '../img/logoSkills/java_logo.png';
 import cSharpLogo from '../img/logoSkills/cSharp_logo.png';
 import cLogo from '../img/logoSkills/c_logo.png';
@@ -109,6 +110,7 @@ export const projects = [
       fr: 'Comprendre les liens entre les données.',
       en: 'Understand how data connects.',
     },
+    image: graphViewerImage,
     technologies: ['Java', 'Prim', 'BFS'],
     summary: {
       fr: 'Une application Java pour charger et visualiser des graphes, explorer leurs arbres couvrants et regrouper les arêtes pour faciliter la lecture.',
