@@ -257,8 +257,49 @@ export const projects = [
     },
   },
   {
-    id: 'bananaw',
+    id: 'pixelwar',
     number: '07',
+    category: 'web',
+    type: {
+      fr: 'Web · Application collaborative',
+      en: 'Web · Collaborative application',
+    },
+    title: { fr: 'Pixel War', en: 'Pixel War' },
+    subtitle: {
+      fr: 'Une création collective, pixel par pixel.',
+      en: 'Building together, one pixel at a time.',
+    },
+    technologies: ['HTML', 'CSS', 'JavaScript', 'API HTTP'],
+    summary: {
+      fr: 'Une interface de pixel art collaboratif : choix d’une équipe, coloration d’une grille partagée et suivi de l’activité des joueurs via une API.',
+      en: 'A collaborative pixel-art interface with team selection, a shared color grid, and player activity retrieved through an API.',
+    },
+    description: {
+      fr: 'Cette application web permet de choisir une équipe et de modifier la couleur de pixels sur une grille commune. Le client JavaScript échange avec une API HTTP pour charger la grille, envoyer les modifications et afficher les informations des joueurs. L’interface prend aussi en compte l’identifiant du joueur, le délai d’attente entre les actions et les messages du serveur.',
+      en: 'This web application lets players choose a team and change pixel colors on a shared grid. The JavaScript client communicates with an HTTP API to load the grid, submit changes, and display player information. The interface also handles player identifiers, waiting times between actions, and server messages.',
+    },
+    learning: {
+      fr: 'J’ai mis en pratique la manipulation du DOM, les événements JavaScript et les requêtes asynchrones avec Fetch. Le projet m’a aussi permis de traiter des réponses JSON, de valider les saisies et d’actualiser l’interface à partir des réponses du serveur.',
+      en: 'I practiced DOM manipulation, JavaScript events, and asynchronous requests with Fetch. The project also helped me process JSON responses, validate user input, and update the interface using server responses.',
+    },
+    features: {
+      fr: [
+        'Grille de pixels partagée et sélection des couleurs',
+        'Choix d’une équipe et validation de l’identifiant joueur',
+        'Actualisation de la grille et des informations des joueurs',
+        'Affichage du délai d’attente et des messages du serveur',
+      ],
+      en: [
+        'Shared pixel grid and color selection',
+        'Team selection and player identifier validation',
+        'Grid and player information updates',
+        'Waiting-time display and server messages',
+      ],
+    },
+  },
+  {
+    id: 'bananaw',
+    number: '08',
     category: 'web',
     type: { fr: 'Web · Premier projet', en: 'Web · First project' },
     title: { fr: 'BananaW', en: 'BananaW' },
@@ -291,6 +332,49 @@ export const projects = [
         'Layout experiments',
         'First steps in web development',
       ],
+    },
+  },
+];
+
+export const journey = [
+  {
+    id: 'dut',
+    period: { fr: '2023 — 2026', en: '2023 — 2026' },
+    title: { fr: 'DUT Informatique', en: 'DUT in Computer Science' },
+    organization: {
+      fr: 'IUT de Bordeaux · Gradignan',
+      en: 'IUT of Bordeaux · Gradignan',
+    },
+    description: {
+      fr: 'DUT obtenu à l’issue de la deuxième année du BUT Informatique.',
+      en: 'Earned the DUT qualification after completing the second year of the BUT in Computer Science.',
+    },
+  },
+  {
+    id: 'research',
+    period: { fr: 'Avril — Juin 2025', en: 'April — June 2025' },
+    title: { fr: 'Stage de recherche', en: 'Research internship' },
+    organization: {
+      fr: 'Université Rovira i Virgili',
+      en: 'Rovira i Virgili University',
+    },
+    details: {
+      fr: '10 semaines · Tarragone, Espagne',
+      en: '10 weeks · Tarragona, Spain',
+    },
+    description: {
+      fr: 'Analyse de textes avec des modèles Transformer, génération d’e-mails personnalisés via l’API ChatGPT et optimisation des tokens.',
+      en: 'Text analysis with Transformer models, personalized email generation through the ChatGPT API, and token optimization.',
+    },
+  },
+  {
+    id: 'efrei',
+    period: { fr: 'En cours', en: 'Ongoing' },
+    title: { fr: 'EFREI', en: 'EFREI' },
+    organization: { fr: 'Formation en informatique', en: 'Computer science studies' },
+    description: {
+      fr: 'Poursuite de mes études en informatique après le DUT.',
+      en: 'Continuing my computer science studies after the DUT.',
     },
   },
 ];
@@ -347,7 +431,7 @@ export const copy = {
     sectionProjects: 'Une sélection de projets',
     projectsTitle: 'Des idées au concret.',
     projectsIntro:
-      'Sept projets, différentes façons de résoudre un problème. Et toujours la même envie : comprendre, construire, progresser.',
+      'Huit projets, différentes façons de résoudre un problème. Et toujours la même envie : comprendre, construire, progresser.',
     filters: {
       all: 'Tous',
       web: 'Web',
@@ -366,6 +450,8 @@ export const copy = {
       'De ma première page HTML à une plateforme de gestion de tournois, mon parcours se construit projet après projet.',
     aboutBody:
       'Mes réalisations explorent le développement web, la visualisation de données, l’algorithmique, la cryptographie et l’intelligence artificielle. Elles m’ont appris à relier les technologies, à travailler en équipe et à passer d’un problème à une solution utilisable.',
+    journeyLabel: 'Formation & expérience',
+    journeyTitle: 'Mon parcours.',
     approaches: [
       {
         title: 'Comprendre',
@@ -419,7 +505,7 @@ export const copy = {
     sectionProjects: 'Selected work',
     projectsTitle: 'Ideas into reality.',
     projectsIntro:
-      'Seven projects, different ways to solve a problem. With the same motivation: understand, build, and grow.',
+      'Eight projects, different ways to solve a problem. With the same motivation: understand, build, and grow.',
     filters: {
       all: 'All',
       web: 'Web',
@@ -438,6 +524,8 @@ export const copy = {
       'From my first HTML page to a tournament management platform, my journey takes shape one project at a time.',
     aboutBody:
       'My work explores web development, data visualization, algorithms, cryptography, and artificial intelligence. These projects have taught me to connect technologies, work with a team, and turn a problem into a usable solution.',
+    journeyLabel: 'Education & experience',
+    journeyTitle: 'My background.',
     approaches: [
       {
         title: 'Understand',

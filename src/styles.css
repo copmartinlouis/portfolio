@@ -191,7 +191,7 @@
   .about-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 120px;
+    gap: 56px 120px;
   }
   .about-copy {
     padding-top: 66px;
@@ -894,6 +894,23 @@
     height: 100%;
     overflow: hidden;
   }
+  .art-pixelwar {
+    background: #e8e4dc;
+    display: grid;
+    place-items: center;
+  }
+  .pixel-board {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    width: min(80%, 220px);
+    aspect-ratio: 1;
+    gap: 1px;
+    border: 1px solid #c7cbbf;
+    background: #c7cbbf;
+  }
+  .pixel-board > span {
+    aspect-ratio: 1;
+  }
   .about-heading h2 {
     margin-top: 38px;
     max-width: 340px;
@@ -962,6 +979,55 @@
     flex-shrink: 0;
     margin-left: auto;
     color: #a8b285;
+  }
+  .journey {
+    grid-column: 1 / -1;
+    padding-top: 32px;
+    border-top: 1px solid #4a4d42;
+  }
+  .journey > .eyebrow {
+    color: #babfb0;
+  }
+  .journey > h3 {
+    margin-top: 10px;
+    font-size: 28px;
+    font-weight: 550;
+    letter-spacing: -0.04em;
+  }
+  .journey-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+    padding: 0;
+    margin-top: 30px;
+    list-style: none;
+  }
+  .journey-list > li {
+    min-width: 0;
+  }
+  .journey-period {
+    color: #c8cdbd;
+  }
+  .journey-list h4 {
+    margin-top: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+  .journey-organization {
+    margin-top: 7px;
+    font-size: 13px;
+    color: #d2d4c9;
+  }
+  .journey-details {
+    margin-top: 3px;
+    font-size: 11px;
+    color: #babfb0;
+  }
+  .journey-description {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #babfb0;
   }
   .skill-heading {
     display: flex;
@@ -1636,6 +1702,19 @@
     }
     .about-copy {
       padding-top: 0;
+    }
+    .journey {
+      margin-top: 12px;
+      padding-top: 28px;
+    }
+    .journey-list {
+      grid-template-columns: 1fr;
+      gap: 26px;
+      margin-top: 26px;
+    }
+    .journey-list > li + li {
+      padding-top: 24px;
+      border-top: 1px solid #4a4d42;
     }
     .about-lead {
       font-size: 21px;

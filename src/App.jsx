@@ -9,7 +9,7 @@ import {
   Terminal,
   X,
 } from 'lucide-react';
-import { copy, links, projects, skillGroups } from './data.js';
+import { copy, journey, links, projects, skillGroups } from './data.js';
 import ProjectArt from './components/ProjectArt.jsx';
 import ProjectDialog from './components/ProjectDialog.jsx';
 
@@ -422,6 +422,29 @@ export default function App() {
                 ))}
               </div>
             </div>
+            <section className="journey" aria-labelledby="journey-title">
+              <span className="eyebrow">{text.journeyLabel}</span>
+              <h3 id="journey-title">{text.journeyTitle}</h3>
+              <ol className="journey-list">
+                {journey.map((entry) => (
+                  <li key={entry.id}>
+                    <span className="eyebrow journey-period">
+                      {entry.period[language]}
+                    </span>
+                    <h4>{entry.title[language]}</h4>
+                    <p className="journey-organization">
+                      {entry.organization[language]}
+                    </p>
+                    {entry.details && (
+                      <p className="journey-details">{entry.details[language]}</p>
+                    )}
+                    <p className="journey-description">
+                      {entry.description[language]}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </section>
           </div>
         </section>
 

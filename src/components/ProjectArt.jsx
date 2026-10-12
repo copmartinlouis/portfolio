@@ -1,5 +1,21 @@
 import { ArrowUpRight, LockKeyhole } from 'lucide-react';
 
+const pixelPattern = [
+  '000000000000',
+  '001111110000',
+  '001000010000',
+  '001000010000',
+  '001111110000',
+  '001000000000',
+  '001000000000',
+  '000000000000',
+  '000000022200',
+  '000000023200',
+  '000000022200',
+  '000000000000',
+];
+const pixelColors = ['#f4f3ef', '#637149', '#c8957f', '#d3ddd8'];
+
 export default function ProjectArt({ project, text, compact = false }) {
   return (
     <div
@@ -121,6 +137,18 @@ export default function ProjectArt({ project, text, compact = false }) {
       )}
       {project.id === 'bananaw' && (
         <img className="banana-art" src={project.logo} alt="" loading="lazy" />
+      )}
+      {project.id === 'pixelwar' && (
+        <div className="pixel-board">
+          {pixelPattern.flatMap((row, y) =>
+            [...row].map((color, x) => (
+              <span
+                key={`${x}-${y}`}
+                style={{ backgroundColor: pixelColors[Number(color)] }}
+              />
+            )),
+          )}
+        </div>
       )}
     </div>
   );

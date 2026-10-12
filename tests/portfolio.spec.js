@@ -14,7 +14,7 @@ test('renders all projects and local images without application errors', async (
   await expect(
     page.getByRole('heading', { name: 'Louis Copmartin.', level: 1 }),
   ).toBeVisible();
-  await expect(page.locator('.project-card, .project-row')).toHaveCount(7);
+  await expect(page.locator('.project-card, .project-row')).toHaveCount(8);
   await expect(
     page.locator('#contact').getByRole('link', { name: 'Me retrouver sur LinkedIn' }),
   ).toHaveAttribute('href', 'https://www.linkedin.com/in/louis-copmartin-9ab392342/');
@@ -34,12 +34,15 @@ test('filters the projects and restores the complete selection', async ({
 }) => {
   await page.goto('/#projects');
   await page.getByRole('button', { name: 'Web', exact: true }).click();
-  await expect(page.locator('.project-card, .project-row')).toHaveCount(2);
+  await expect(page.locator('.project-card, .project-row')).toHaveCount(3);
   await expect(
     page.getByRole('link', { name: 'Découvrir le projet : RoboSoccer' }),
   ).toBeVisible();
   await expect(
     page.getByRole('link', { name: 'Découvrir le projet : BananaW' }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('link', { name: 'Découvrir le projet : Pixel War' }),
   ).toBeVisible();
   await page.getByRole('button', { name: 'IA', exact: true }).click();
   await expect(page.locator('.project-card, .project-row')).toHaveCount(1);
@@ -57,7 +60,7 @@ test('filters the projects and restores the complete selection', async ({
   ).toBeVisible();
   await expect(page.locator('.project-count')).toHaveText('02 projets');
   await page.getByRole('button', { name: 'Tous', exact: true }).click();
-  await expect(page.locator('.project-card, .project-row')).toHaveCount(7);
+  await expect(page.locator('.project-card, .project-row')).toHaveCount(8);
 });
 
 test('opens details, navigates projects and closes with Escape', async ({
@@ -119,6 +122,13 @@ test('supports direct links and browser back navigation', async ({ page }) => {
   await expect(page.getByRole('dialog')).toBeVisible();
   await page.goBack();
   await expect(page.getByRole('dialog')).not.toBeVisible();
+  await page.goto('/#project/pixelwar');
+  const pixelDialog = page.getByRole('dialog');
+  await expect(
+    pixelDialog.getByRole('heading', { name: 'Pixel War', exact: true }),
+  ).toBeVisible();
+  await expect(pixelDialog.getByText('Dépôt source non disponible.')).toBeVisible();
+  await expect(pixelDialog.getByRole('link')).toHaveCount(0);
 });
 
 test('changes language and persists the choice on reload', async ({ page }) => {
@@ -127,6 +137,9 @@ test('changes language and persists the choice on reload', async ({ page }) => {
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(
     page.getByRole('heading', { name: 'Ideas into reality.' }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('heading', { name: 'My background.' }),
   ).toBeVisible();
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
