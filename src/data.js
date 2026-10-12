@@ -1,5 +1,6 @@
 import carbonLogo from '../img/carbon_logo.png';
 import bananaLogo from '../img/bananaw_logo.PNG';
+import mazeImage from '../img/maze-game.png';
 import javaLogo from '../img/logoSkills/java_logo.png';
 import cSharpLogo from '../img/logoSkills/cSharp_logo.png';
 import cLogo from '../img/logoSkills/c_logo.png';
@@ -15,6 +16,7 @@ import gitlabLogo from '../img/logo_gitlab.png';
 export const links = {
   github: 'https://github.com/copmartinlouis',
   gitlab: 'https://gitlab-ce.iut.u-bordeaux.fr/lcopmartin',
+  linkedin: 'https://www.linkedin.com/in/louis-copmartin-9ab392342/',
 };
 
 export const projects = [
@@ -95,8 +97,91 @@ export const projects = [
     },
   },
   {
-    id: 'towa',
+    id: 'graphviewer',
     number: '03',
+    category: 'algorithms',
+    type: {
+      fr: 'Algorithmique · Visualisation',
+      en: 'Algorithms · Visualization',
+    },
+    title: { fr: 'GraphViewer', en: 'GraphViewer' },
+    subtitle: {
+      fr: 'Comprendre les liens entre les données.',
+      en: 'Understand how data connects.',
+    },
+    technologies: ['Java', 'Prim', 'BFS'],
+    summary: {
+      fr: 'Une application Java pour charger et visualiser des graphes, explorer leurs arbres couvrants et regrouper les arêtes pour faciliter la lecture.',
+      en: 'A Java application for loading and visualizing graphs, exploring spanning trees, and bundling edges to make connections easier to read.',
+    },
+    description: {
+      fr: 'Ce projet universitaire représente des réseaux sous forme de sommets et d’arêtes. L’application charge des fichiers texte ou CSV décrivant les sommets, leurs coordonnées et leurs connexions. Elle propose une visualisation du graphe, de ses arbres couvrants et du regroupement hiérarchique des arêtes, appelé hierarchical edge bundling.',
+      en: 'This university project represents networks as nodes and edges. The application loads text or CSV files describing nodes, their coordinates, and their connections. It provides graph visualization, spanning-tree views, and hierarchical edge bundling.',
+    },
+    learning: {
+      fr: 'Ce projet m’a permis de mettre en pratique la théorie des graphes et la programmation orientée objet en Java. J’ai travaillé sur la représentation des données, le parcours en largeur BFS et l’algorithme de Prim pour construire un arbre couvrant minimal, puis sur la traduction de ces structures en une visualisation lisible.',
+      en: 'This project helped me apply graph theory and object-oriented programming in Java. I worked on data representation, breadth-first search, and Prim’s minimum spanning-tree algorithm, then turned these structures into readable visualizations.',
+    },
+    features: {
+      fr: [
+        'Import de sommets, coordonnées et arêtes depuis des fichiers texte ou CSV',
+        'Visualisation de graphes et d’arbres couvrants',
+        'Parcours en largeur BFS et arbre couvrant minimal avec Prim',
+        'Regroupement hiérarchique des arêtes',
+      ],
+      en: [
+        'Import nodes, coordinates, and edges from text or CSV files',
+        'Graph and spanning-tree visualization',
+        'Breadth-first search and minimum spanning trees with Prim',
+        'Hierarchical edge bundling',
+      ],
+    },
+  },
+  {
+    id: 'maze',
+    number: '04',
+    category: 'algorithms',
+    type: {
+      fr: 'Algorithmique · Recherche de chemin',
+      en: 'Algorithms · Pathfinding',
+    },
+    title: { fr: 'Maze Game', en: 'Maze Game' },
+    subtitle: {
+      fr: 'Trouver le chemin, étape par étape.',
+      en: 'Find the way, one step at a time.',
+    },
+    image: mazeImage,
+    technologies: ['Java', 'UML', 'BFS', 'Dijkstra'],
+    summary: {
+      fr: 'Un jeu de labyrinthe modélisé comme un graphe, avec BFS et Dijkstra pour rechercher les plus courts chemins.',
+      en: 'A maze game modeled as a graph, using BFS and Dijkstra to find the shortest paths.',
+    },
+    description: {
+      fr: 'Les chemins du labyrinthe sont représentés par des sommets et des arêtes. Cette modélisation permet d’appliquer le parcours en largeur BFS et l’algorithme de Dijkstra pour rechercher les trajets les plus courts. Le projet associe une réalisation en Java à une conception UML.',
+      en: 'Maze pathways are represented as nodes and edges. This model makes it possible to apply breadth-first search and Dijkstra’s algorithm to find the shortest routes. The project combines a Java implementation with UML design.',
+    },
+    learning: {
+      fr: 'J’ai appris à transformer un problème de déplacement en une structure de graphe et à y appliquer des algorithmes de recherche de chemin. Le projet m’a permis de mieux comprendre le fonctionnement de BFS et de Dijkstra, tout en reliant la conception UML à l’implémentation Java.',
+      en: 'I learned to turn a navigation problem into a graph and apply pathfinding algorithms to it. The project helped me understand BFS and Dijkstra while connecting UML design to a Java implementation.',
+    },
+    features: {
+      fr: [
+        'Modélisation du labyrinthe en sommets et arêtes',
+        'Recherche de chemin par parcours en largeur BFS',
+        'Calcul des plus courts chemins avec Dijkstra',
+        'Conception UML et implémentation en Java',
+      ],
+      en: [
+        'Maze modeled as nodes and edges',
+        'Pathfinding with breadth-first search',
+        'Shortest-path calculation with Dijkstra',
+        'UML design and Java implementation',
+      ],
+    },
+  },
+  {
+    id: 'towa',
+    number: '05',
     category: 'ai',
     type: { fr: 'IA · Jeu de stratégie', en: 'AI · Strategy game' },
     title: { fr: 'Towa AI', en: 'Towa AI' },
@@ -132,7 +217,7 @@ export const projects = [
   },
   {
     id: 'rsa',
-    number: '04',
+    number: '06',
     category: 'security',
     type: { fr: 'Sécurité · Cryptographie', en: 'Security · Cryptography' },
     title: { fr: 'Mini RSA', en: 'Mini RSA' },
@@ -171,7 +256,7 @@ export const projects = [
   },
   {
     id: 'bananaw',
-    number: '05',
+    number: '07',
     category: 'web',
     type: { fr: 'Web · Premier projet', en: 'Web · First project' },
     title: { fr: 'BananaW', en: 'BananaW' },
@@ -260,13 +345,14 @@ export const copy = {
     sectionProjects: 'Une sélection de projets',
     projectsTitle: 'Des idées au concret.',
     projectsIntro:
-      'Cinq projets, différentes façons de résoudre un problème. Et toujours la même envie : comprendre, construire, progresser.',
+      'Sept projets, différentes façons de résoudre un problème. Et toujours la même envie : comprendre, construire, progresser.',
     filters: {
       all: 'Tous',
       web: 'Web',
       data: 'Données',
       ai: 'IA',
       security: 'Sécurité',
+      algorithms: 'Algorithmique',
     },
     filterLabel: 'Filtrer les projets',
     projectCount: 'projets',
@@ -277,7 +363,7 @@ export const copy = {
     aboutLead:
       'De ma première page HTML à une plateforme de gestion de tournois, mon parcours se construit projet après projet.',
     aboutBody:
-      'Mes réalisations explorent le développement web, la visualisation de données, la cryptographie et l’intelligence artificielle. Elles m’ont appris à relier les technologies, à travailler en équipe et à passer d’un problème à une solution utilisable.',
+      'Mes réalisations explorent le développement web, la visualisation de données, l’algorithmique, la cryptographie et l’intelligence artificielle. Elles m’ont appris à relier les technologies, à travailler en équipe et à passer d’un problème à une solution utilisable.',
     approaches: [
       {
         title: 'Comprendre',
@@ -298,8 +384,8 @@ export const copy = {
       'Un socle technique développé et mis en pratique au fil de mes projets.',
     contactLabel: 'Et la suite ?',
     contactTitle: 'Continuons\nla conversation.',
-    contactBody: 'Retrouvez mes projets et mon code sur GitHub et GitLab.',
-    githubCta: 'Me retrouver sur GitHub',
+    contactBody: 'Retrouvez mon parcours sur LinkedIn et mes projets sur GitHub et GitLab.',
+    linkedinCta: 'Me retrouver sur LinkedIn',
     footerRole: 'Développement logiciel',
     backTop: 'Retour en haut',
     closeProject: 'Fermer le projet',
@@ -308,6 +394,7 @@ export const copy = {
     projectLearning: 'Ce que j’en retiens',
     technologies: 'Technologies',
     sourceCode: 'Voir le code sur GitLab',
+    sourceUnavailable: 'Dépôt source non disponible.',
     previousProject: 'Projet précédent',
     nextProject: 'Projet suivant',
     illustration: 'Illustration du projet',
@@ -330,13 +417,14 @@ export const copy = {
     sectionProjects: 'Selected work',
     projectsTitle: 'Ideas into reality.',
     projectsIntro:
-      'Five projects, different ways to solve a problem. With the same motivation: understand, build, and grow.',
+      'Seven projects, different ways to solve a problem. With the same motivation: understand, build, and grow.',
     filters: {
       all: 'All',
       web: 'Web',
       data: 'Data',
       ai: 'AI',
       security: 'Security',
+      algorithms: 'Algorithms',
     },
     filterLabel: 'Filter projects',
     projectCount: 'projects',
@@ -347,7 +435,7 @@ export const copy = {
     aboutLead:
       'From my first HTML page to a tournament management platform, my journey takes shape one project at a time.',
     aboutBody:
-      'My work explores web development, data visualization, cryptography, and artificial intelligence. These projects have taught me to connect technologies, work with a team, and turn a problem into a usable solution.',
+      'My work explores web development, data visualization, algorithms, cryptography, and artificial intelligence. These projects have taught me to connect technologies, work with a team, and turn a problem into a usable solution.',
     approaches: [
       {
         title: 'Understand',
@@ -365,8 +453,8 @@ export const copy = {
       'A technical foundation developed and put into practice across my projects.',
     contactLabel: 'What’s next?',
     contactTitle: 'Let’s keep\nthe conversation going.',
-    contactBody: 'Find my projects and code on GitHub and GitLab.',
-    githubCta: 'Find me on GitHub',
+    contactBody: 'Find my background on LinkedIn and my projects on GitHub and GitLab.',
+    linkedinCta: 'Find me on LinkedIn',
     footerRole: 'Software development',
     backTop: 'Back to top',
     closeProject: 'Close project',
@@ -375,6 +463,7 @@ export const copy = {
     projectLearning: 'What I learned',
     technologies: 'Technologies',
     sourceCode: 'View the code on GitLab',
+    sourceUnavailable: 'Source repository unavailable.',
     previousProject: 'Previous project',
     nextProject: 'Next project',
     illustration: 'Project illustration',

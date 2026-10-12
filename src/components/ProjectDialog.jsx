@@ -106,15 +106,19 @@ export default function ProjectDialog({
                   ))}
                 </div>
               </section>
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button button-dark"
-              >
-                {text.sourceCode}
-                <ArrowUpRight size={18} />
-              </a>
+              {project.url ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button button-dark"
+                >
+                  {text.sourceCode}
+                  <ArrowUpRight size={18} />
+                </a>
+              ) : (
+                <p className="source-unavailable">{text.sourceUnavailable}</p>
+              )}
             </div>
             <nav
               className="dialog-navigation"

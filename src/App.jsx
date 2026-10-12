@@ -220,7 +220,16 @@ export default function App() {
               </a>
             ))}
             <a
-              className="nav-github"
+              className="nav-external"
+              href={links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+              <ArrowUpRight size={15} />
+            </a>
+            <a
+              className="nav-external"
               href={links.github}
               target="_blank"
               rel="noopener noreferrer"
@@ -484,12 +493,21 @@ export default function App() {
             <p>{text.contactBody}</p>
             <a
               className="button button-dark"
+              href={links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {text.linkedinCta}
+              <ArrowUpRight size={20} />
+            </a>
+            <a
+              className="text-link"
               href={links.github}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {text.githubCta}
-              <ArrowUpRight size={20} />
+              GitHub
+              <ArrowUpRight size={17} />
             </a>
             <a
               className="text-link"

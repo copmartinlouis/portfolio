@@ -81,6 +81,52 @@ export default function ProjectArt({ project, text, compact = false }) {
           ))}
         </div>
       )}
+      {project.id === 'graphviewer' && (
+        <svg className="graph-graphic" viewBox="0 0 360 220">
+          <path
+            className="graph-links"
+            d="M70 45L185 25L295 70L280 175L170 120L65 160L70 45L170 120L185 25M295 70L170 120M65 160L280 175"
+          />
+          <path
+            className="graph-tree"
+            d="M65 160L70 45L185 25L170 120L280 175L295 70"
+          />
+          <g className="graph-nodes">
+            {[
+              [70, 45, 'A'],
+              [185, 25, 'B'],
+              [295, 70, 'C'],
+              [65, 160, 'D'],
+              [170, 120, 'E'],
+              [280, 175, 'F'],
+            ].map(([x, y, label]) => (
+              <g key={label} transform={`translate(${x} ${y})`}>
+                <circle r="12" />
+                <text>{label}</text>
+              </g>
+            ))}
+          </g>
+        </svg>
+      )}
+      {project.id === 'maze' && (
+        <svg
+          className="maze-capture"
+          viewBox="36 22 479 314"
+          preserveAspectRatio={compact ? 'xMaxYMin slice' : 'xMidYMid meet'}
+        >
+          <defs>
+            <clipPath id={`maze-frame${compact ? '-compact' : ''}`}>
+              <rect x="36" y="22" width="479" height="314" />
+            </clipPath>
+          </defs>
+          <image
+            href={project.image}
+            width="939"
+            height="359"
+            clipPath={`url(#maze-frame${compact ? '-compact' : ''})`}
+          />
+        </svg>
+      )}
       {project.id === 'rsa' && (
         <div className="rsa-graphic">
           <span className="rsa-orbit orbit-one" />

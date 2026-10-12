@@ -14,7 +14,10 @@ test('renders all projects and local images without application errors', async (
   await expect(
     page.getByRole('heading', { name: 'Louis Copmartin.', level: 1 }),
   ).toBeVisible();
-  await expect(page.locator('.project-card, .project-row')).toHaveCount(5);
+  await expect(page.locator('.project-card, .project-row')).toHaveCount(7);
+  await expect(
+    page.locator('#contact').getByRole('link', { name: 'Me retrouver sur LinkedIn' }),
+  ).toHaveAttribute('href', 'https://www.linkedin.com/in/louis-copmartin-9ab392342/');
   await expect(page.locator('.skill-list li')).toHaveCount(14);
   await page.locator('#skills').scrollIntoViewIfNeeded();
   await page.waitForFunction(() =>
@@ -44,8 +47,17 @@ test('filters the projects and restores the complete selection', async ({
     page.getByRole('link', { name: 'Découvrir le projet : Towa AI' }),
   ).toBeVisible();
   await expect(page.locator('.project-count')).toHaveText('01 projet');
+  await page.getByRole('button', { name: 'Algorithmique', exact: true }).click();
+  await expect(page.locator('.project-card, .project-row')).toHaveCount(2);
+  await expect(
+    page.getByRole('link', { name: 'Découvrir le projet : GraphViewer' }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('link', { name: 'Découvrir le projet : Maze Game' }),
+  ).toBeVisible();
+  await expect(page.locator('.project-count')).toHaveText('02 projets');
   await page.getByRole('button', { name: 'Tous', exact: true }).click();
-  await expect(page.locator('.project-card, .project-row')).toHaveCount(5);
+  await expect(page.locator('.project-card, .project-row')).toHaveCount(7);
 });
 
 test('opens details, navigates projects and closes with Escape', async ({
@@ -72,6 +84,20 @@ test('opens details, navigates projects and closes with Escape', async ({
     dialog.getByRole('heading', { name: 'Carbon', exact: true }),
   ).toBeVisible();
   await expect(page).toHaveURL(/#project\/carbon$/);
+  await dialog.getByRole('button', { name: /Projet suivant/ }).click();
+  await expect(
+    dialog.getByRole('heading', { name: 'GraphViewer', exact: true }),
+  ).toBeVisible();
+  await expect(dialog.getByText('Dépôt source non disponible.')).toBeVisible();
+  await expect(dialog.getByRole('link')).toHaveCount(0);
+  await dialog.getByRole('button', { name: /Projet suivant/ }).click();
+  await expect(
+    dialog.getByRole('heading', { name: 'Maze Game', exact: true }),
+  ).toBeVisible();
+  await expect(dialog.locator('.maze-capture image')).toHaveAttribute(
+    'href', /maze-game.*\.png$/,
+  );
+  await expect(dialog.getByRole('link')).toHaveCount(0);
   await page.keyboard.press('Escape');
   await expect(dialog).not.toBeVisible();
   await expect(opener).toBeFocused();
@@ -109,6 +135,11 @@ test('changes language and persists the choice on reload', async ({ page }) => {
     .click();
   await expect(
     page.getByRole('dialog').getByRole('heading', { name: 'What I learned' }),
+  ).toBeVisible();
+  await page.getByRole('dialog')
+    .getByRole('button', { name: /Next project/ }).click();
+  await expect(
+    page.getByRole('dialog').getByText('Source repository unavailable.'),
   ).toBeVisible();
 });
 
